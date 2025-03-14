@@ -3,23 +3,25 @@ use linear_regression::SingleLinearRegression;
 use linear_regression::autodiff::{Node, Var, Sum, Mul, Const};
 
 fn main() {
-    // let constant: Var = Var {
-    //     name: "x".to_string(),
-    //     value: 0,
-    // };
-    // let var: Var = Var {
-    //     name: "y".to_string(),
-    //     value: 2,
-    // };
-    // let sum: Sum = Sum {
-    //     x: Node::Var(constant),
-    //     y: Node::Var(var.clone()),
-    // };
-    // let mul : Mul = Mul{
-    //     x: Node ::Var(var.clone()),
-    //     y: Node::Sum(Box::new(sum.clone()))
-    // };
-    // println!("Differentiation: {}", mul.backward(&Node::Var(var)));
+    //Differentiation
+    let constant: Var = Var {
+        name: "x".to_string(),
+        value: 0.0,
+    };
+    let var: Var = Var {
+        name: "y".to_string(),
+        value: 2.0,
+    };
+    let sum: Sum = Sum {
+        x: Node::Var(constant),
+        y: Node::Var(var.clone()),
+    };
+    let mul : Mul = Mul{
+        x: Node ::Var(var.clone()),
+        y: Node::Sum(Box::new(sum.clone()))
+    };
+    println!("Differentiation: {}", mul.backward(&Node::Var(var)));
+    //Linear Regression
     let x = [1.0, 2.0, 3.0, 4.0, 5.0];
     let y = [2.0, 4.0, 6.0, 8.0, 10.0];
     let mut sing_linear_reg = SingleLinearRegression {
