@@ -72,29 +72,3 @@ impl fmt::Display for SingleLinearRegression {
         write!(f, "y = {}*x+{}", self.w.value, self.b.value)
     }
 }
-
-pub struct MultiLinearRegression {
-    pub number_of_features: i128,
-    pub x: Const,
-    pub y: Const,
-    pub w: Vec<Var>,
-    pub b: Var,
-    pub eq : Vec<Node>,
-}
-
-impl MultiLinearRegression {
-    pub fn initialize(&mut self) {
-        let mut rng = rand::rng();
-        for i in 0..self.number_of_features{
-            self.w.push(Var {
-                name: format!("w_{}", i),
-                value:  rng.random_range(0.0..1.0),
-            });
-        }
-        self.b = Var {
-            name: "b".to_string(),
-            value: rng.random_range(0.0..1.0),
-        };
-    }
-
-}
