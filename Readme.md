@@ -1,4 +1,4 @@
-# AutoDiff
+# AutoRust
 
 AutoDiff is a Rust library for automatic differentiation and linear regression. It provides a simple and efficient way to perform differentiation and linear regression using computational graphs.
 
