@@ -1,6 +1,6 @@
 # AutoRust
 
-AutoDiff is a Rust library for automatic differentiation and linear regression. It provides a simple and efficient way to perform differentiation and linear regression using computational graphs.
+AutoRust is a Rust library for automatic differentiation and linear regression. It provides a simple and efficient way to perform differentiation and linear regression using computational graphs.
 
 ## Features
 
@@ -10,11 +10,11 @@ AutoDiff is a Rust library for automatic differentiation and linear regression. 
 
 ## Installation
 
-To use AutoDiff in your project, add the following to your `Cargo.toml`:
+To use AutoRust in your project, add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-autodiff = { path = "." }
+AutoRust = { path = "." }
 rand = "0.9.0"
 ```
 
@@ -25,7 +25,7 @@ rand = "0.9.0"
 You can perform differentiation using the provided `Node`, `Var`, `Sum`, `Mul`, and `Const` structures. Here is an example:
 
 ```rust
-use autodiff::{Node, Var, Sum, Mul, Const};
+use AutoRust::{Node, Var, Sum, Mul, Const};
 
 fn main() {
     let constant: Var = Var {
@@ -53,8 +53,8 @@ fn main() {
 You can perform linear regression using the `SingleLinearRegression` struct. Here is an example:
 
 ```rust
-use autodiff::linear_regression::SingleLinearRegression;
-use autodiff::linear_regression::autodiff::{Node, Var, Sum, Mul, Const};
+use AutoRust::linear_regression::SingleLinearRegression;
+use AutoRust::linear_regression::AutoRust::{Node, Var, Sum, Mul, Const};
 
 fn main() {
     let x = [1.0, 2.0, 3.0, 4.0, 5.0];
